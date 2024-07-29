@@ -4,15 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Getter
 @Setter
 
-public class CarDto {
+public class AccessoryDto {
     private String licensePlate;
     private LocalDate repairDate;
-    private String customerName;
-    private String catalogs;
-    private String carMaker;
+    private String name;
+    private Long price;
+    private String statusDamaged;
+    private String repairStatus;
 }

@@ -3,6 +3,7 @@ package com.vti.kshop.Controller;
 import com.vti.kshop.Entity.Car;
 import com.vti.kshop.Form.CarCreateForm;
 import com.vti.kshop.Dto.CarDto;
+import com.vti.kshop.Form.CarUpdateForm;
 import com.vti.kshop.Service.CarService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -28,5 +29,10 @@ public class CarController {
     @DeleteMapping("/api/v1/cars")
     public void delete(@RequestBody Car.CarPK id){
         carService.delete(id);
+    }
+
+    @PutMapping("/api/v1/cars")
+    public CarDto update(@RequestBody @Valid CarUpdateForm form){
+        return carService.update(form);
     }
 }

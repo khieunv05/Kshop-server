@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -34,6 +35,6 @@ public class Car {
         private String licensePlate;
 
         @Column(name = "repair_date",nullable = false)
-        private LocalTime repairDate;
+        private LocalDate repairDate;
     }
 }

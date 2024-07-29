@@ -8,11 +8,11 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Getter
 @Setter
-public class CarCreateForm {
+
+public class AccessoryCreateForm {
     @NotBlank
     @Length(max = 10)
     private String licensePlate;
@@ -23,14 +23,16 @@ public class CarCreateForm {
 
     @NotBlank
     @Length(max = 50)
-    private String customerName;
+    private String name;
+
+    @NotNull
+    private Long price;
 
     @NotBlank
     @Length(max = 50)
-    private String catalogs;
+    private String statusDamaged;
 
     @NotBlank
     @Length(max = 50)
-    private String carMaker;
-
+    private String repairStatus;
 }

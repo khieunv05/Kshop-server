@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Getter
@@ -18,7 +19,7 @@ public class CarUpdateForm {
 
     @NotNull
     @PastOrPresent
-    private LocalTime repairDate;
+    private LocalDate repairDate;
 
     @NotBlank
     @Length(max = 50)
