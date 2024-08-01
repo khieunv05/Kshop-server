@@ -17,6 +17,7 @@ public class AccessoryMapper {
     }
     public static AccessoryDto map(Accessory accessory){
         var dto = new AccessoryDto();
+        dto.setId(accessory.getId());
         dto.setName(accessory.getName());
         dto.setPrice(accessory.getPrice());
         dto.setStatusDamaged(accessory.getStatusDamaged());

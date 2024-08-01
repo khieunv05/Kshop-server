@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Setter
 
 public class AccessoryDto {
+    private Long id;
     private String licensePlate;
     private LocalDate repairDate;
     private String name;
