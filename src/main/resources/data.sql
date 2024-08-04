@@ -10,3 +10,7 @@ INSERT INTO accessory (license_plate, repair_date, name         , price  , statu
 VALUES                ('11A-206.57' ,'2022-07-21 ','Cần gạt mưa', 999000 , 'Bị gãy'       , 'Thay mới'),
                       ('14B-676.66' ,'2018-03-29 ','Lọc gió'    , 199000 , 'Bị bụi bẩn'   , 'Làm sạch'),
                       ('20B-643.83' ,'2006-05-29' ,'Lốp xe'     , 2000000, 'Bị thủng'     , 'Thay mới');
+
+INSERT INTO role (type   , created_at       , updated_at       )
+VALUES           ("ADMIN", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+                 ("USER" , CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

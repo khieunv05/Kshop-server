@@ -1,16 +1,21 @@
 package com.vti.kshop.Service;
 
 import com.vti.kshop.Dto.UserDto;
+import com.vti.kshop.Entity.Role;
 import com.vti.kshop.Form.UserCreateForm;
 import com.vti.kshop.Map.UserMapper;
 import com.vti.kshop.Repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 @AllArgsConstructor
@@ -32,8 +37,13 @@ public class UserServiceImp implements UserService, UserDetailsService {
         if(user ==null){
             throw new UsernameNotFoundException(username);
         }
+        var authorities = new ArrayList<GrantedAuthority>();
+        for (var role : user.getRoles()) {
+            var authority = new SimpleGrantedAuthority(role.getType().toString());
+            authorities.add(authority);
+        }
         return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),user.getPassword(), AuthorityUtils.NO_AUTHORITIES
+                user.getUsername(),user.getPassword(), authorities
         );
     }
 }
