@@ -6,6 +6,7 @@ import com.vti.kshop.Service.UserService;
 import com.vti.kshop.Service.UserServiceImp;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @Validated
+@CrossOrigin("http://127.0.0.1:5500/")
 public class UserController {
     private final UserService userService;
 
